@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="Commands.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> 
-	<link rel="icon" type="image/jpg" href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTlsGl-V7Gb64ffg1PEZeYruXnLbtD9RPYGQTuCttV3w1fFDQyl">
+	<link rel="icon" type="image/jpg" href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSFHe5zBwEoicH56rh8mNzx4y1QRE0HbQFGCTRuddwrBw9zSyZz">
 	<title>Commands</title>
 </head>
 
@@ -46,7 +46,7 @@ Mysql
 
 <kbd>sudo mysql -u root -p</kbd>
 
-<b id="arrow">>>></b> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pratik';
+<b id="arrow">>>> </b>ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pratik';
 
 </code>
 </pre>
@@ -57,18 +57,18 @@ Mysql
 <pre class="pre-scrollable">
 <code class="language-javascript">
 Sqlite
-<b id="arrow">>>></b> const sqlite3 = require('sqlite3')
-<b id="arrow">>>></b> let db = new sqlite3.Database('database name');
-<b id="arrow">>>></b> db.run('CREATE TABLE langs(name text) .values("Pratik")');
+<b id="arrow">>>> </b>const sqlite3 = require('sqlite3')
+<b id="arrow">>>> </b>let db = new sqlite3.Database('database name');
+<b id="arrow">>>> </b>db.run('CREATE TABLE langs(name text) .values("Pratik")');
 
 Mysql
-<b id="arrow">>>></b> const mysql = require('mysql');
-<b id="arrow">>>></b> const connection = mysql.createConnection({
+<b id="arrow">>>> </b>const mysql = require('mysql');
+<b id="arrow">>>> </b>const connection = mysql.createConnection({
   	host: 'localhost',
   	user: 'user',
   	password: 'password',
     });
-<b id="arrow">>>></b> con.connect(function(err) {
+<b id="arrow">>>> </b>con.connect(function(err) {
     if (err) throw err;
         console.log("Connected!");
         con.query("CREATE DATABASE mydb", function (err, result) {
@@ -86,10 +86,10 @@ Mysql
 <code class="language-javascript">
 <b>Creating table : </b>
 Sql query
-<b id="arrow">>>></b> create table users(id int unsigned not null auto_increment primary key, name varchar(255), created_at datetime, updated_at datetime)
+<b id="arrow">>>> </b>create table users(id int unsigned not null auto_increment primary key, name varchar(255), created_at datetime, updated_at datetime)
 
 Knex query
-<b id="arrow">>>></b> knex.schema.createTable('users', function (table) {
+<b id="arrow">>>> </b>knex.schema.createTable('users', function (table) {
 	table.increments();
 	table.string('name');
 	table.timestamps();
@@ -104,64 +104,64 @@ Knex query
 <code class="language-javascript">
 <b>Select : </b>
 Sql query
-<b id="arrow">>>></b> select * from `users`
+<b id="arrow">>>> </b>select * from `users`
 
 Knex query
-<b id="arrow">>>></b> knex.select('*').from('users');
+<b id="arrow">>>> </b>knex.select('*').from('users');
 
 <b>Insert : </b>
 Sql query
-<b id="arrow">>>></b> insert into `books` (`title`) values ('Slaughterhouse Five')
+<b id="arrow">>>> </b>insert into `books` (`title`) values ('Slaughterhouse Five')
 
 Knex query
-<b id="arrow">>>></b> knex('books').insert({title: 'Slaughterhouse Five'})
+<b id="arrow">>>> </b>knex('books').insert({title: 'Slaughterhouse Five'})
 
 <b>Update : </b>
 Sql query
-<b id="arrow">>>></b> update `books` set `title` = 'Slaughterhouse Five'
+<b id="arrow">>>> </b>update `books` set `title` = 'Slaughterhouse Five'
 
 Knex query
-<b id="arrow">>>></b> knex('books').update('title', 'Slaughterhouse Five')
+<b id="arrow">>>> </b>knex('books').update('title', 'Slaughterhouse Five')
 
 <b>Where : </b>
 Sql query
-<b id="arrow">>>></b> select `id` from `users` where `first_name` = 'Test' and `last_name` = 'User'
+<b id="arrow">>>> </b>select `id` from `users` where `first_name` = 'Test' and `last_name` = 'User'
 
 Knex query
-<b id="arrow">>>></b> knex('users').where({
+<b id="arrow">>>> </b>knex('users').where({
 	first_name: 'Test',
 	last_name:  'User'
     })
 
 <b>Truncate : </b>
 Sql query
-<b id="arrow">>>></b> truncate `accounts`
+<b id="arrow">>>> </b>truncate `accounts`
 
 Knex query
-<b id="arrow">>>></b> knex('accounts').truncate()
+<b id="arrow">>>> </b>knex('accounts').truncate()
 
 <b>Join : </b>
 Sql query
-<b id="arrow">>>></b> select * from `users` inner join `accounts` on `accounts`.`id` = `users`.`account_id` or `accounts`.`owner_id` = `users`.`id`
+<b id="arrow">>>> </b>select * from `users` inner join `accounts` on `accounts`.`id` = `users`.`account_id` or `accounts`.`owner_id` = `users`.`id`
 
 Knex query
-<b id="arrow">>>></b> knex('users').join('accounts', function() {
+<b id="arrow">>>> </b>knex('users').join('accounts', function() {
 	this.on('accounts.id', '=', 'users.account_id')
     })
 
 <b>Limit and Offset : </b>
 Sql query
-<b id="arrow">>>></b> select * from `users` limit 10 offset 30
+<b id="arrow">>>> </b>select * from `users` limit 10 offset 30
 
 Knex query
-<b id="arrow">>>></b> knex.select('*').from('users').limit(10).offset(30)
+<b id="arrow">>>> </b>knex.select('*').from('users').limit(10).offset(30)
 
 <b>Delete : </b>
 Sql query
-<b id="arrow">>>></b> delete from `accounts` where `activated` = false
+<b id="arrow">>>> </b>delete from `accounts` where `activated` = false
 
 Knex query
-<b id="arrow">>>></b> knex('accounts').where('activated', false).del()
+<b id="arrow">>>> </b>knex('accounts').where('activated', false).del()
 
 </code>
 </pre>
